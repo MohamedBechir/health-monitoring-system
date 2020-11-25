@@ -1,23 +1,30 @@
 package com.hms.main;
 
+import java.util.ArrayList;
+
 public class Route {
 
-  private int distance = 0;
+private ArrayList<Point> route = new ArrayList<Point>();
 
-  /**
-   * @param distance
-   */
-  public Route(int distance) {
-    this.distance = distance;
-  }
+/**
+ * @param route
+ */
+public Route(ArrayList<Point> route) {
+  this.route = route;
+}
 
-  public int getDistance() {
-    return distance;
-  }
+public ArrayList<Point> getRoute() {
+  return route;
+}
 
-  public void setDistance(int distance) {
-    this.distance = distance;
-  }
-  
+public void setRoute(ArrayList<Point> route) {
+  this.route = route;
+}
+
+public int getDistance() {
+  return Util.distanceCalculator(this.route);
+}
+
+
   
 }
