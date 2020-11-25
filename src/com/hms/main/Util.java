@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Util {
   
-  public static int distanceCalculator(ArrayList<Point> points) {
+  public static float distanceCalculator(ArrayList<Point> points) {
     int distance = 0;
     
     for(int i = 0; i < points.size() - 1; i++) {
@@ -13,21 +13,5 @@ public class Util {
     
     return distance;
   }
-  
-  // Route initializer  
-  private static Route newRoute = new Route(null); 
-  public static void initRoute() {
-   if(Util.newRoute.getRoute() == null) {
-     ArrayList<Point> route = new ArrayList<Point>();
-     route.add(new Point(1,1));
-     route.add(new Point(2,2));
-     route.add(new Point(2,3));
-     route.add(new Point(3,4));
-     route.add(new Point(4,6));
-     route.add(new Point(8, 12));
-     newRoute.setRoute(route);
-   }
- }
-  
-  
+   
 }

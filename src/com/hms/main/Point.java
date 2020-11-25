@@ -2,17 +2,17 @@ package com.hms.main;
 
 public class Point {
   
-  private int xCor = 0;
-  private int yCor = 0;
+  private float xCor = 0;
+  private float yCor = 0;
   
-  public Point(int x, int y) {
+  public Point(float x, float y) {
     
     this.xCor = x;
     this.yCor = y;
     
   }
 
-  public int getxCor() {
+  public float getxCor() {
     return xCor;
   }
 
@@ -20,7 +20,7 @@ public class Point {
     this.xCor = xCor;
   }
 
-  public int getyCor() {
+  public float getyCor() {
     return yCor;
   }
 

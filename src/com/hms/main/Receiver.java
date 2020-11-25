@@ -2,6 +2,6 @@ package com.hms.main;
 
 public interface Receiver {
   
-  public void action();
+  public void action(Runner runner);
 
 }
