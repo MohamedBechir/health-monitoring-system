@@ -20,9 +20,4 @@ public class Route {
   public static ArrayList<Point> getRoute() {
     return route;
   }
-  
-  
-
-
-  
 }

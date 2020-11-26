@@ -1,5 +1,6 @@
 package com.hms.main;
 
 public interface TransmitterFactory {
-public Transmitter create();
+	public Watch createWatch();
+	public BPB createBPB();	
 }
