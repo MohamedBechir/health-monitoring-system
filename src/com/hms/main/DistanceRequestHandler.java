@@ -6,8 +6,8 @@ public class DistanceRequestHandler implements Receiver {
   
 
   @Override
-  public void action(Route route) {
-        Util.distanceCalculator(route.getPoints());
+  public void action() {
+        Util.distanceCalculator(Route.getInstance().getPoints());
   }
   
   

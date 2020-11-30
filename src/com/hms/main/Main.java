@@ -35,7 +35,7 @@ public class Main {
 		Runner runner = Runner.getInstance();
 		runner.setRunnerName("John Doe");
 	// Create a route
-	  Route route = new Route(Util.pointsGenerator());
+	  Route.getInstance().setPoints(Util.pointsGenerator());
 
   }
 
