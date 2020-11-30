@@ -2,11 +2,17 @@ package com.hms.main;
 
 public class DistanceRequest implements Request {
   
-  DistanceRequestHandler drh = new DistanceRequestHandler();
+    private Route route;
+    private Receiver receiver;
+
+    public DistanceRequest(Route route, Receiver receiver) {
+        this.route = route;
+        this.receiver = receiver;
+    }
 
   @Override
   public void execute() {
-   drh.action(Runner.getInstance());
+
   }
 
   
