@@ -1,10 +1,11 @@
 package com.hms.main;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Util {
   
-  public static float distanceCalculator(ArrayList<Point> points) {
+  public static float distanceCalculator(List<Point> points) {
     int distance = 0;
     
     for(int i = 0; i < points.size() - 1; i++) {
@@ -12,5 +13,16 @@ public class Util {
     }
     return distance;
   }
-   
+
+  public static List<Point> pointsGenerator() {
+    List<Point> points = new ArrayList<Point>();
+    points.add(new Point(1,1));
+    points.add(new Point(2,2));
+    points.add(new Point(2,3));
+    points.add(new Point(3,4));
+    points.add(new Point(4,6));
+    points.add(new Point(8, 12));
+
+    return points;
+  }
 }

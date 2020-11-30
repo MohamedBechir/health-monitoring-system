@@ -6,10 +6,8 @@ public class DistanceRequestHandler implements Receiver {
   
 
   @Override
-  public void action(Runner runner) {
-        ArrayList<Point> route = Route.getRoute();
-        float distance = Util.distanceCalculator(route);
-        runner.setDistanceCovered(distance);
+  public void action(Route route) {
+        Util.distanceCalculator(route.getPoints());
   }
   
   

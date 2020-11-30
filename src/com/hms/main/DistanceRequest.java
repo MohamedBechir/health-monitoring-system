@@ -12,7 +12,7 @@ public class DistanceRequest implements Request {
 
   @Override
   public void execute() {
-
+        receiver.action(this.route);
   }
 
   
