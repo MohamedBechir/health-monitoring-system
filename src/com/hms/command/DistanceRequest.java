@@ -1,4 +1,4 @@
-package com.hms.main;
+package com.hms.command;
 
 public class DistanceRequest implements Request {
   

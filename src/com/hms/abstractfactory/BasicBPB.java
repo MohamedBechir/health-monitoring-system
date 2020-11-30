@@ -1,4 +1,4 @@
-package com.hms.main;
+package com.hms.abstractfactory;
 
 public class BasicBPB implements BPB{
 	@Override

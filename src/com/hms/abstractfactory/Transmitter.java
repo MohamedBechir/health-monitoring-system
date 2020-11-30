@@ -1,4 +1,4 @@
-package com.hms.main;
+package com.hms.abstractfactory;
 
 public abstract class Transmitter {
 public abstract void reboot();
