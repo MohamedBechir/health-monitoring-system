@@ -9,8 +9,9 @@ public class CalculateDistanceCommand implements Command {
     }
 
   @Override
-  public void execute() {
-        receiver.action();
+  public float execute() {
+        float result = receiver.action();
+		return result;
   }
 
   

@@ -8,10 +8,6 @@ import java.util.Scanner;
 import com.hms.abstractfactory.BasicTransmitterFactory;
 import com.hms.abstractfactory.DeluxeTransmitterFactory;
 import com.hms.abstractfactory.TransmitterFactory;
-import com.hms.command.CalculateDistanceCommand;
-import com.hms.command.DistanceRequestHandler;
-import com.hms.command.Receiver;
-import com.hms.command.RequestFacade;
 import com.hms.command.WatchScreen;
 
 public class Main {
@@ -33,7 +29,8 @@ public class Main {
 		
 		/*Let's assume that WatchScreen is the client
 	  	this is how we run our command pattern code!*/
-		new WatchScreen().displayDistance();
+		float result = new WatchScreen().displayDistance();
+		System.out.println(result);
 		
 	 	Scanner chooseProduct = new Scanner(System.in);
 	 	System.out.println("Enter the product of your choice: ");
