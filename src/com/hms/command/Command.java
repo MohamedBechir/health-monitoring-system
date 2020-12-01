@@ -1,6 +1,6 @@
 package com.hms.command;
 
-public interface Request {
+public interface Command {
 
   public void execute();
 }

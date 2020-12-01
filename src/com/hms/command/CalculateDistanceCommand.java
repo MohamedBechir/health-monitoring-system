@@ -1,10 +1,10 @@
 package com.hms.command;
 
-public class DistanceRequest implements Request {
+public class CalculateDistanceCommand implements Command {
   
     private Receiver receiver;
 
-    public DistanceRequest(Receiver receiver) {
+    public CalculateDistanceCommand(Receiver receiver) {
         this.receiver = receiver;
     }
 

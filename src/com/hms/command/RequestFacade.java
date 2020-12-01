@@ -2,17 +2,18 @@ package com.hms.command;
 
 public class RequestFacade {
 
-  private static Request request;
+  private static Command command;
 
   public static void measureDistance() {
-    request.execute();
+	  command.execute();
   }
   public static void measureBloodPressure() {}
 
+  public static void test() {}
 
-  public static void setRequest(Request r) {
-    request = r;
-  }
   
+  public static void setCommand(Command r) {
+	  command = r;
+  }
 
 }
