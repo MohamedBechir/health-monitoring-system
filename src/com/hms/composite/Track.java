@@ -18,8 +18,8 @@ public class Track extends MusicItem{
 
     @Override
     public void browse() {
-        System.out.print(getName());
-        System.out.println();
+        System.out.print("Track: ");
+        System.out.println(getName());
     }
 
     @Override

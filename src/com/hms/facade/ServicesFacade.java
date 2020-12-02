@@ -9,7 +9,7 @@ public class ServicesFacade {
     private ServicesFacade(){}
 
     private static ServicesFacade instance = null;
-    private static final MusicItem musicItem = new PlayList();
+    private static final MusicItem musicItem = new PlayList("Main List");
 
     public static ServicesFacade getInstance() {
         if (instance == null) {
@@ -20,8 +20,8 @@ public class ServicesFacade {
 
     public void buildMusicList() {
         // Create an PlayList.
-        PlayList rock = new PlayList();
-        PlayList uTwoAlbum = new PlayList();
+        PlayList rock = new PlayList("Rock");
+        PlayList uTwoAlbum = new PlayList("U2Album");
 
         uTwoAlbum.add(new Track("California"));
         uTwoAlbum.add(new Track("Iris"));

@@ -33,7 +33,7 @@ public class Main {
 		float result = new WatchScreen().displayDistance();
 		System.out.println(result);
 		
-	 	Scanner chooseProduct = new Scanner(System.in);
+	/* 	Scanner chooseProduct = new Scanner(System.in);
 	 	System.out.println("Enter the product of your choice: ");
 	 	// Read user input
 	 	String productChosen = chooseProduct.nextLine();
@@ -50,7 +50,7 @@ public class Main {
 	 		transmitterFactory = new BasicTransmitterFactory();
 	 		transmitterFactory.createBPB().TestBPB();	
 	 	}
-	 	chooseProduct.close();
+	 	chooseProduct.close();*/
 
 		// Test Composite Pattern
 		ServicesFacade.getInstance().buildMusicList();
