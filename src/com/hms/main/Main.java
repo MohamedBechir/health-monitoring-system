@@ -9,6 +9,7 @@ import com.hms.abstractfactory.BasicTransmitterFactory;
 import com.hms.abstractfactory.DeluxeTransmitterFactory;
 import com.hms.abstractfactory.TransmitterFactory;
 import com.hms.command.WatchScreen;
+import com.hms.facade.ServicesFacade;
 
 public class Main {
 	
@@ -50,6 +51,10 @@ public class Main {
 	 		transmitterFactory.createBPB().TestBPB();	
 	 	}
 	 	chooseProduct.close();
+
+		// Test Composite Pattern
+		ServicesFacade.getInstance().buildMusicList();
+		ServicesFacade.getInstance().browseMI();
 	}
 
 }

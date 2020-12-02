@@ -3,7 +3,7 @@ package com.hms.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Album extends MusicItem {
+public class PlayList extends MusicItem {
 
     List<MusicItem> musicItemList = new ArrayList<MusicItem>();
 
