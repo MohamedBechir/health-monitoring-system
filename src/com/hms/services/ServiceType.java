@@ -1,2 +1,5 @@
-package com.hms.services;public enum ServiceType {
+package com.hms.services;
+
+public enum ServiceType {
+    BASIC, DELUXE
 }
