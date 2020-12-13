@@ -4,9 +4,8 @@ public class RequestFacade {
 
   private static Command command;
 
-  public static float measureDistance() {
-	  float result = command.execute();
-	  return result;
+  public static void measureDistance() {
+	  command.execute();
   }
   public static void measureBloodPressure() {}
 

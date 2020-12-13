@@ -1,8 +1,20 @@
 package com.hms.facade;
 
+import com.hms.abstractfactory.BPB;
+import com.hms.abstractfactory.BasicTransmitterFactory;
+import com.hms.abstractfactory.DeluxeTransmitterFactory;
+import com.hms.abstractfactory.TransmitterFactory;
+import com.hms.abstractfactory.Watch;
 import com.hms.composite.MusicItem;
 import com.hms.composite.PlayList;
 import com.hms.composite.Track;
+import com.hms.services.BasicService;
+import com.hms.services.BasicServiceCreator;
+import com.hms.services.DeluxeService;
+import com.hms.services.DeluxeServiceCreator;
+import com.hms.services.Service;
+import com.hms.services.ServiceCreator;
+import com.hms.services.ServiceType;
 
 public class ServicesFacade {
 
@@ -36,5 +48,33 @@ public class ServicesFacade {
 
     public void browseMI() {
         musicItem.browse();
+    }
+
+    public static Service createService(ServiceType type) {
+        Service s = null;
+        TransmitterFactory transmitterFactory = null;
+        ServiceCreator serviceCreator = null;
+        switch (type) {
+            case BASIC:
+                transmitterFactory = new BasicTransmitterFactory();
+                serviceCreator = new BasicServiceCreator();
+                break;
+            case DELUXE:
+                transmitterFactory = new DeluxeTransmitterFactory();
+                serviceCreator = new DeluxeServiceCreator();
+                break;
+            default:
+                System.out.println("No Such Service Type");
+                break;
+        }
+        Watch watch = transmitterFactory.createWatch();
+        BPB belt = transmitterFactory.createBPB();
+
+        s = serviceCreator.create();
+
+        s.setWatch(watch);
+        s.setBelt(belt);
+
+        return s;
     }
 }

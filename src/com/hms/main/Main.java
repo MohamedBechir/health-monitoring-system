@@ -10,6 +10,8 @@ import com.hms.abstractfactory.DeluxeTransmitterFactory;
 import com.hms.abstractfactory.TransmitterFactory;
 import com.hms.command.WatchScreen;
 import com.hms.facade.ServicesFacade;
+import com.hms.services.Service;
+import com.hms.services.ServiceType;
 
 public class Main {
 	
@@ -20,6 +22,11 @@ public class Main {
 		runner.setRunnerName("John Doe");
 		// Create a route
 		Route.getInstance().setPoints(Util.pointsGenerator());
+		// Create a Deluxe Service
+		Service service = ServicesFacade.createService(ServiceType.DELUXE);
+		runner.setService(service);
+		service.setRunner(runner);
+		System.out.println(runner.getService().toString());
 	  
 		/*Let's assume that this is the client
 	  	this is how we run our command pattern code!*/
@@ -30,9 +37,9 @@ public class Main {
 		
 		/*Let's assume that WatchScreen is the client
 	  	this is how we run our command pattern code!*/
-		float result = new WatchScreen().displayDistance();
+		/*float result = new WatchScreen().displayDistance();
 		System.out.println(result);
-		
+		*/
 	/* 	Scanner chooseProduct = new Scanner(System.in);
 	 	System.out.println("Enter the product of your choice: ");
 	 	// Read user input

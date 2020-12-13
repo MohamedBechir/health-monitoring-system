@@ -1,11 +1,13 @@
 package com.hms.main;
 
 import com.hms.command.RequestFacade;
+import com.hms.services.Service;
 
 public class Runner {
 
   private String runnerName;
   private float distanceCovered = 0;
+  private Service service;
   private static Runner instance = null;
   private Runner(){}
   
@@ -32,5 +34,12 @@ public class Runner {
     RequestFacade.measureDistance();
     return this.distanceCovered;
   }
-  
+
+  public void setService(Service s) {
+    this.service = s;
+  }
+
+  public Service getService() {
+    return service;
+  }
 }
