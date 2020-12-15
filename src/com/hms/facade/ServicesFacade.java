@@ -6,6 +6,8 @@ import com.hms.abstractfactory.DeluxeTransmitterFactory;
 import com.hms.abstractfactory.TransmitterFactory;
 import com.hms.abstractfactory.Watch;
 import com.hms.adapter.Printer;
+import com.hms.command.BloodPressureRequestHandler;
+import com.hms.command.CalculateBloodPressureCommand;
 import com.hms.command.CalculateDistanceCommand;
 import com.hms.command.Command;
 import com.hms.command.DistanceRequestHandler;
@@ -36,10 +38,17 @@ public class ServicesFacade {
         return instance;
     }
     
+    //How to avoid adding runner as a parameter(I feel that it is useless but we need to pass it as a param for CalculateDistanceCommand)
     public void measureDistance(Runner runner) {
     	Receiver distanceReceiver = new DistanceRequestHandler();
 		Command distanceCalculation = new CalculateDistanceCommand(distanceReceiver, runner);
 		distanceCalculation.execute();
+    }
+    
+    public void bloodPressure(Runner runner) {
+    	Receiver bloodPressureReceiver = new BloodPressureRequestHandler();
+		Command bloodPressureCalculation = new CalculateBloodPressureCommand(bloodPressureReceiver, runner);
+		bloodPressureCalculation.execute();
     }
     
     public void printService(Printer p, Service s) {

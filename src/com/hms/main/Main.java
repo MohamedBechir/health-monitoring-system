@@ -48,6 +48,9 @@ public class Main {
 		//Measure Distance
 		ServicesFacade.getInstance().measureDistance(runner);
 		
+		//Measure Blood Pressure
+		ServicesFacade.getInstance().bloodPressure(runner);
+		
 		// Test Composite Pattern
 		ServicesFacade.getInstance().buildMusicList();
 		ServicesFacade.getInstance().browseMI();

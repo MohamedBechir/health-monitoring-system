@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Random;
 
 
-public class Util {
+public class Util {	
 	
-	public Random generator = new Random();
-
-    
+    public static float bloodPressureCalculator() {
+		return 2 + (int)(Math.random() * ((6 - 2) + 1));
+    }
+	
+	
   public static int distanceCalculator(List<Point> points) {
     int distance = 0;
 
