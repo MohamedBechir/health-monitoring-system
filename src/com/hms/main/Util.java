@@ -8,7 +8,7 @@ import java.util.Random;
 public class Util {	
 	
     public static float bloodPressureCalculator() {
-		return 2 + (int)(Math.random() * ((6 - 2) + 1));
+		return 8 + (int)(Math.random() * ((20 - 8) + 1));
     }
 	
 	
