@@ -1,13 +1,16 @@
 package com.hms.main;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import com.hms.command.RequestFacade;
 
 public class Route {
 
   private Route() {}
   private static Route instance = null;
   private static List<Point> points = null;
+  private float distanceCovered = 0;
+
 
   public static Route getInstance() {
       if(instance == null) {
@@ -23,4 +26,15 @@ public class Route {
   public List<Point> getPoints() {
       return points;
   }
+  
+  public float getDistanceCovered() {
+	    RequestFacade.measureDistance();
+	    return this.distanceCovered;
+	  }
+  
+  public void setDistanceCovered(float distance) {
+	    this.distanceCovered = distance;
+	  }
+
+  
 }

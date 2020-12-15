@@ -8,7 +8,11 @@ import java.util.Scanner;
 import com.hms.abstractfactory.BasicTransmitterFactory;
 import com.hms.abstractfactory.DeluxeTransmitterFactory;
 import com.hms.abstractfactory.TransmitterFactory;
-import com.hms.command.WatchScreen;
+import com.hms.command.CalculateDistanceCommand;
+import com.hms.command.Command;
+import com.hms.command.DistanceRequestHandler;
+import com.hms.command.Receiver;
+import com.hms.command.RequestFacade;
 import com.hms.facade.ServicesFacade;
 import com.hms.observer.ControlUnit;
 import com.hms.observer.Device;
@@ -37,7 +41,12 @@ public class Main {
 		Device device = new Device(cu);
 		cu.attach(device);
 		cu.ticks();
-	  
+		
+		//Get the distance covered by the runner
+		Receiver distanceReceiver = new DistanceRequestHandler();
+		Command distanceCalculation = new CalculateDistanceCommand(distanceReceiver, runner);
+		distanceCalculation.execute();
+		
 		// Test Composite Pattern
 		ServicesFacade.getInstance().buildMusicList();
 		ServicesFacade.getInstance().browseMI();

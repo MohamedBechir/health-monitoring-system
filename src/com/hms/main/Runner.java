@@ -6,7 +6,6 @@ import com.hms.services.Service;
 public class Runner {
 
   private String runnerName;
-  private float distanceCovered = 0;
   private Service service;
   private static Runner instance = null;
   private Runner(){}
@@ -22,18 +21,10 @@ public class Runner {
     return this.runnerName;
   }
   
-  public void setDistanceCovered(float distance) {
-    this.distanceCovered = distance;
-  }
-
   public void setRunnerName(String name) {
     this.runnerName = name;
   }
 
-  public float getDistanceCovered() {
-    RequestFacade.measureDistance();
-    return this.distanceCovered;
-  }
 
   public void setService(Service s) {
     this.service = s;
