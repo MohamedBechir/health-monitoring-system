@@ -5,9 +5,15 @@ import com.hms.abstractfactory.BasicTransmitterFactory;
 import com.hms.abstractfactory.DeluxeTransmitterFactory;
 import com.hms.abstractfactory.TransmitterFactory;
 import com.hms.abstractfactory.Watch;
+import com.hms.adapter.Printer;
+import com.hms.command.CalculateDistanceCommand;
+import com.hms.command.Command;
+import com.hms.command.DistanceRequestHandler;
+import com.hms.command.Receiver;
 import com.hms.composite.MusicItem;
 import com.hms.composite.PlayList;
 import com.hms.composite.Track;
+import com.hms.main.Runner;
 import com.hms.services.BasicService;
 import com.hms.services.BasicServiceCreator;
 import com.hms.services.DeluxeService;
@@ -28,6 +34,16 @@ public class ServicesFacade {
            instance = new ServicesFacade();
         }
         return instance;
+    }
+    
+    public void measureDistance(Runner runner) {
+    	Receiver distanceReceiver = new DistanceRequestHandler();
+		Command distanceCalculation = new CalculateDistanceCommand(distanceReceiver, runner);
+		distanceCalculation.execute();
+    }
+    
+    public void printService(Printer p, Service s) {
+    	p.print(s);
     }
 
     public void buildMusicList() {

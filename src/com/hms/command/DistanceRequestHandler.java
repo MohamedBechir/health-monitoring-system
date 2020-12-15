@@ -9,7 +9,7 @@ public class DistanceRequestHandler implements Receiver {
   @Override
   public void action() {
         float distance = Util.distanceCalculator(Route.getInstance().getPoints());
-        System.out.println("Distance covered is: "+ distance+ " meters");
+        System.out.println("Distance covered is: "+ distance+ " Kilometers");
 
   }
 	}
