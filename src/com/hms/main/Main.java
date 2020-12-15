@@ -1,6 +1,6 @@
 /**
  * This the driver class where the project can launched.
- * */
+ */
 package com.hms.main;
 
 
@@ -15,45 +15,50 @@ import com.hms.services.Service;
 import com.hms.services.ServiceType;
 
 public class Main {
-	
-	static TransmitterFactory transmitterFactory; 
-	public static void main(String[] args) {
-		
-		// Create a runner
-		Runner runner = Runner.getInstance();
-		runner.setRunnerName("John Doe");
-		System.out.println("Runner: "+ runner.getName());
-		
-		// Create a route
-		Route.getInstance().setPoints(Util.pointsGenerator());
-		
-		// Create a Deluxe Service
-		Service service = ServicesFacade.createService(ServiceType.DELUXE);
-		runner.setService(service);
-		service.setRunner(runner);
-		
-		
-		//Adapter
-		ExpertPrinter expertPrinter = new ExpertPrinter();
-		Printer printer = new PrintAdapter(expertPrinter);
-		ServicesFacade.getInstance().printService(printer, service);
-		
-		
-		//Observer
-		ControlUnit cu = new ControlUnit();
-		Device device = new Device(cu);
-		cu.attach(device);
-		cu.ticks();
-		
-		//Measure Distance
-		ServicesFacade.getInstance().measureDistance(runner);
-		
-		//Measure Blood Pressure
-		ServicesFacade.getInstance().bloodPressure(runner);
-		
-		// Test Composite Pattern
-		ServicesFacade.getInstance().buildMusicList();
-		ServicesFacade.getInstance().browseMI();
-	}
+
+  static TransmitterFactory transmitterFactory;
+
+  public static void main(String[] args) {
+
+    // Create a runner
+    Runner runner = Runner.getInstance();
+    runner.setRunnerName("John Doe");
+    System.out.println("Runner: " + runner.getName());
+
+    // Create a route
+    Route.getInstance().setPoints(Util.pointsGenerator());
+
+    // Create a Deluxe Service
+    Service service = ServicesFacade.createService(ServiceType.DELUXE);
+    runner.setService(service);
+    service.setRunner(runner);
+
+
+    // Adapter
+    ExpertPrinter expertPrinter = new ExpertPrinter();
+    Printer printer = new PrintAdapter(expertPrinter);
+    ServicesFacade.getInstance().printService(printer, service);
+
+
+    // Observer
+    ControlUnit cu = new ControlUnit();
+    Device device = new Device(cu);
+    cu.attach(device);
+    cu.ticks();
+
+    // Measure Distance (Command Pattern)
+    ServicesFacade.getInstance().measureDistance(runner);
+
+    // Measure Blood Pressure (Command Pattern)
+    ServicesFacade.getInstance().bloodPressure(runner);
+
+    // Test Composite Pattern (Music Items PlayList)
+    ServicesFacade.getInstance().buildMusicList();
+    ServicesFacade.getInstance().browseMI();
+
+    // Rebooting Devices (Template Design Pattern)
+    service.getBelt().reboot();
+    service.getWarch().reboot();
+  }
 
 }
