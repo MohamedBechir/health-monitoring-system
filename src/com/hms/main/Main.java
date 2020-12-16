@@ -68,6 +68,10 @@ public class Main {
     services.addService(new Service("Measure Heart Rate", ServiceType.BASIC));
     services.addService(new Service("Measure Speed", ServiceType.BASIC));
     services.addService(new Service("Measure Distance", ServiceType.BASIC));
+    services.addService(new Service("Send Health Log to doctor", ServiceType.DELUXE));
+    services.addService(new Service("Estimate distance that will be covered", ServiceType.DELUXE));
+    services.addService(new Service("Predict the weather", ServiceType.DELUXE));
+    services.addService(new Service("Give the Runner's Form", ServiceType.DELUXE));
 	/*channels.addChannel(new Channel(102.5, ChannelTypeEnum.HINDI));
 	channels.addChannel(new Channel(103.5, ChannelTypeEnum.FRENCH));
 	channels.addChannel(new Channel(104.5, ChannelTypeEnum.ENGLISH));
@@ -75,14 +79,18 @@ public class Main {
 	channels.addChannel(new Channel(106.5, ChannelTypeEnum.FRENCH));*/
 	
 	// Basic Type Iterator
-	Iterator baseIterator = services.iterator(ServiceType.BASIC);
-	while (baseIterator.hasNext()) {
-		Service c = baseIterator.next();
-		System.out.println(c.toString());
+	Iterator basicIterator = services.iterator(ServiceType.BASIC);
+	while (basicIterator.hasNext()) {
+		Service basicService = basicIterator.next();
+		System.out.println(basicService.toString());
 	}
 	
-	
 	// Deluxe Type Iterator
+	Iterator deluxeIterator = services.iterator(ServiceType.DELUXE);
+	while (deluxeIterator.hasNext()) {
+		Service deluxService = deluxeIterator.next();
+		System.out.println(deluxService.toString());
+	}
 	
 }
 

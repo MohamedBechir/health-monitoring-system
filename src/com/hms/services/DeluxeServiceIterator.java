@@ -1,13 +1,34 @@
 package com.hms.services;
 
+import java.util.List;
+
 public class DeluxeServiceIterator implements Iterator {
-    @Override
+	
+	private ServiceType serviceType;
+	private List<Service> deluxeServicesList;
+	private int position;
+	
+    public DeluxeServiceIterator(ServiceType serviceType, List<Service> deluxeServicesList) {
+    	this.serviceType = serviceType;
+    	this.deluxeServicesList = deluxeServicesList;
+	}
+
+	@Override
     public Service next() {
-        return null;
-    }
+		Service service = deluxeServicesList.get(position);
+		position++;
+		return service;
+	}    
 
     @Override
     public boolean hasNext() {
-        return false;
+    	while (position < deluxeServicesList.size()) {
+			Service service = deluxeServicesList.get(position);
+			if (service.getTYPE().equals(serviceType)) {
+				return true;
+			} else
+				position++;
+		}
+		return false;
     }
 }
