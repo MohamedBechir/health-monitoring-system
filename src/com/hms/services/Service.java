@@ -21,7 +21,7 @@ public class Service {
     
     @Override
 	public String toString(){
-		return "Service name is "+this.serviceName + " of "+ this.serviceType+ " Type";
+		return "Service name is: "+this.serviceName + " , "+ this.serviceType+ " Type";
 	}
     
     public ServiceType getTYPE() {

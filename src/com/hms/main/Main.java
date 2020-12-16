@@ -72,11 +72,6 @@ public class Main {
     services.addService(new Service("Estimate distance that will be covered", ServiceType.DELUXE));
     services.addService(new Service("Predict the weather", ServiceType.DELUXE));
     services.addService(new Service("Give the Runner's Form", ServiceType.DELUXE));
-	/*channels.addChannel(new Channel(102.5, ChannelTypeEnum.HINDI));
-	channels.addChannel(new Channel(103.5, ChannelTypeEnum.FRENCH));
-	channels.addChannel(new Channel(104.5, ChannelTypeEnum.ENGLISH));
-	channels.addChannel(new Channel(105.5, ChannelTypeEnum.HINDI));
-	channels.addChannel(new Channel(106.5, ChannelTypeEnum.FRENCH));*/
 	
 	// Basic Type Iterator
 	Iterator basicIterator = services.iterator(ServiceType.BASIC);
@@ -84,6 +79,8 @@ public class Main {
 		Service basicService = basicIterator.next();
 		System.out.println(basicService.toString());
 	}
+	
+	System.out.println("--------");
 	
 	// Deluxe Type Iterator
 	Iterator deluxeIterator = services.iterator(ServiceType.DELUXE);

@@ -1,23 +1,26 @@
 package com.hms.services;
 
-public class DeluxeServiceCollection implements ServiceCollection{
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class DeluxeServiceCollection implements ServiceCollection {
+    List<Service> deluxeServicesList = new ArrayList<Service>();
 
 	@Override
 	public void addService(Service service) {
-		// TODO Auto-generated method stub
-		
+		this.deluxeServicesList.add(service);
 	}
 
 	@Override
 	public void removeService(Service service) {
-		// TODO Auto-generated method stub
-		
+		this.deluxeServicesList.remove(service);
 	}
 
 	@Override
-	public Iterator iterator(ServiceType type) {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterator iterator(ServiceType serviceType) {
+		return new DeluxeServiceIterator(serviceType, this.deluxeServicesList);
 	}
+    
 
 }
