@@ -12,7 +12,9 @@ import com.hms.facade.ServicesFacade;
 import com.hms.observer.ControlUnit;
 import com.hms.observer.Device;
 import com.hms.services.BasicServiceCollection;
+import com.hms.services.Iterator;
 import com.hms.services.Service;
+import com.hms.services.ServiceCollection;
 import com.hms.services.ServiceType;
 
 public class Main {
@@ -61,7 +63,27 @@ public class Main {
     service.getBelt().reboot();
     service.getWarch().reboot();
     
+    ServiceCollection services = new BasicServiceCollection();
+    services.addService(new Service("Measure BloodPressure", ServiceType.BASIC));
+    services.addService(new Service("Measure Heart Rate", ServiceType.BASIC));
+    services.addService(new Service("Measure Speed", ServiceType.BASIC));
+    services.addService(new Service("Measure Distance", ServiceType.BASIC));
+	/*channels.addChannel(new Channel(102.5, ChannelTypeEnum.HINDI));
+	channels.addChannel(new Channel(103.5, ChannelTypeEnum.FRENCH));
+	channels.addChannel(new Channel(104.5, ChannelTypeEnum.ENGLISH));
+	channels.addChannel(new Channel(105.5, ChannelTypeEnum.HINDI));
+	channels.addChannel(new Channel(106.5, ChannelTypeEnum.FRENCH));*/
+	
+	// Basic Type Iterator
+	Iterator baseIterator = services.iterator(ServiceType.BASIC);
+	while (baseIterator.hasNext()) {
+		Service c = baseIterator.next();
+		System.out.println(c.toString());
+	}
+	
+	
+	// Deluxe Type Iterator
+	
+}
 
   }
-  
-}

@@ -18,8 +18,8 @@ public class BasicServiceCollection implements ServiceCollection {
 	}
 
 	@Override
-	public Iterator iterator(ServiceType type) {
-		return new BasicServiceIterator();
+	public Iterator iterator(ServiceType serviceType) {
+		return new BasicServiceIterator(serviceType, this.basicServicesList);
 	}
     
 

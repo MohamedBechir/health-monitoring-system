@@ -1,14 +1,34 @@
 package com.hms.services;
 
+import java.util.List;
+
 public class BasicServiceIterator implements Iterator {
 	
-    @Override
+	private ServiceType serviceType;
+	private List<Service> basicServicesList;
+	private int position;
+	
+    public BasicServiceIterator(ServiceType serviceType, List<Service> basicServicesList) {
+    	this.serviceType = serviceType;
+    	this.basicServicesList = basicServicesList;
+	}
+
+	@Override
     public Service next() {
-        return null;
-    }
+		Service service = basicServicesList.get(position);
+		position++;
+		return service;
+	}    
 
     @Override
     public boolean hasNext() {
-        return false;
+    	while (position < basicServicesList.size()) {
+			Service service = basicServicesList.get(position);
+			if (service.getTYPE().equals(serviceType)) {
+				return true;
+			} else
+				position++;
+		}
+		return false;
     }
 }

@@ -4,12 +4,29 @@ import com.hms.abstractfactory.BPB;
 import com.hms.abstractfactory.Watch;
 import com.hms.main.Runner;
 
-public abstract class Service {
+public class Service {
     private Watch w;
     private BPB belt;
     private Runner runner;
+    private String serviceName;
+    private ServiceType serviceType;
 
-    public abstract Iterator createIterator();
+    
+    public Service() {}
+    
+    public Service(String serviceName, ServiceType serviceType) {
+    	this.serviceName = serviceName;
+    	this.serviceType = serviceType;
+    }
+    
+    @Override
+	public String toString(){
+		return "Service name is "+this.serviceName + " of "+ this.serviceType+ " Type";
+	}
+    
+    public ServiceType getTYPE() {
+		return serviceType;
+	}
     
     public void setWatch(Watch w) {
         this.w = w;
