@@ -11,6 +11,7 @@ import com.hms.adapter.Printer;
 import com.hms.facade.ServicesFacade;
 import com.hms.observer.ControlUnit;
 import com.hms.observer.Device;
+import com.hms.services.BasicServiceCollection;
 import com.hms.services.Service;
 import com.hms.services.ServiceType;
 
@@ -59,6 +60,8 @@ public class Main {
     // Rebooting Devices (Template Design Pattern)
     service.getBelt().reboot();
     service.getWarch().reboot();
-  }
+    
 
+  }
+  
 }

@@ -10,6 +10,7 @@ public abstract class Service {
     private Runner runner;
 
     public abstract Iterator createIterator();
+    
     public void setWatch(Watch w) {
         this.w = w;
     }
